@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 class TemController extends AbstractController
 {
 
-    #[Route('/factorial/{num}')]
+    #[Route('/factoria/{num}')]
     public function factorial($num = null)
     {
         $factorial = 1;
@@ -24,7 +24,7 @@ class TemController extends AbstractController
         }
     }
 
-    #[Route('/celsius/{grados}')]
+    #[Route('/celsius/{grados}', name: 'rutacel')]
     public function calcularFaren($grados = null)
     {
 
@@ -36,7 +36,7 @@ class TemController extends AbstractController
         }
     }
 
-    #[Route('/fahrenhit/{faren}')]
+    #[Route('/fahrenhit/{faren}', name: 'rutafar')]
     public function calcularCelsius($faren = null)
     {
         if ($faren == null || $faren < -459.67) {

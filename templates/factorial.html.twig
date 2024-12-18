@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+</head>
+<body>
+    <h1>Resultado del Factorial</h1>
+    {% if resultado == -1 %}
+        <p style="color: red;">Error: El número proporcionado no es válido. Por favor, introduce un número entero positivo.</p>
+    {% else %}
+        <p>El factorial es: {{ resultado }}</p>
+    {% endif %}
+</body>
+</html>

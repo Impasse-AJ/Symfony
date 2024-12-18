@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor de Temperatura</title>
+</head>
+<body>
+    {%include('encabezado.html.twig')%}
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    {% if temperature is not null %}
+    <h1>Convertidor de Temperatura</h1>
+        <p>Temperatura indicada: {{ temperature }}</p>
+        <ul>
+            <li><a href="{{ path('rutafar', { faren: temperature }) }}">Convertir a Fahrenheit</a></li>
+            <li><a href="{{ path('rutacel', { grados: temperature }) }}">Convertir a Celsius</a></li>
+        </ul>
+    {% endif %}
+
+</body>
+</html>
