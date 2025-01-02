@@ -1,0 +1,14 @@
+<html lang="es">
+<head>
+</head>
+<body>
+    {%include('encabezado2.html.twig')%}
+    <h1>Obtener IMC</h1>
+    <form method="post" action="{{ path('calcImc') }}">
+        Peso:<input type="number" name="peso"><br>
+        Estatura:<input type="number" name="estatura"><br>
+        <input type="submit">
+    </form>
+
+</body>
+</html>

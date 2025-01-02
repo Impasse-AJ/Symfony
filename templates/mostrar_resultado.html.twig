@@ -1,0 +1,16 @@
+<html>
+	<head></head>
+	<body>
+		{% if error %}
+			{%include('encabezado2.html.twig')%}
+			<p style="color: red;">{{ error }}</p>
+		{% endif %}
+
+		{% if imc is not null %}
+			{%include('encabezado3.html.twig')%}
+			<h1>Obtener IMC</h1>
+			Resultado:
+			{{ imc }}
+		{% endif %}
+	</body>
+</html>
