@@ -1,0 +1,10 @@
+{% extends 'base_uploader.html.twig' %}
+
+{% block content %}
+    <h1>Subir Archivo</h1>
+    <form action="{{ path('procesa_subida') }}" method="post" enctype="multipart/form-data">
+        <label for="archivo">Selecciona un archivo:</label>
+        <input type="file" id="archivo" name="archivo" accept=".pdf,image/*">
+        <button type="submit">Subir</button>
+    </form>
+{% endblock %}
