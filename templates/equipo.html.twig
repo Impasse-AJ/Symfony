@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inazuma Eleven</title>
+</head>
+<body>
+    {%include('encabezado3.html.twig')%}
+    <h1>Informacion de Equipo</h1>
+    {% if mensaje %}
+        <p style="color: red;">{{ mensaje }}</p>
+    {% else %}
+        <p>El ID es: {{ id }}</p>
+        <p>El Nombre es: {{ nombre }}</p>
+        <p>La fundación es: {{ funda }}</p>
+        <p>La ciudad es: {{ ciudad }}</p>
+        <p>Los socios es: {{ socios }}</p>
+        <p>Los Jugadores son: {{ jugadores }}</p>
+    {% endif %}
+</body>
+</html>

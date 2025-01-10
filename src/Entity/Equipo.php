@@ -3,6 +3,7 @@
 // ===== MUCHO CUIDADO, tienes que incluir el namespace =====
 namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity] 
 #[ORM\Table(name: 'equipo')]
@@ -24,6 +25,13 @@ class Equipo{
     #[ORM\Column(type:'string', name:'ciudad')]
     private $ciudad;
 	
+    #[ORM\OneToMany(targetEntity: 'Jugador', mappedBy: 'equipo')]
+    private $jugadores;
+
+    public function __construct()
+    {
+        $this->jugadores = new ArrayCollection();
+    }
 	public function getId()
     {
         return $this->id;
@@ -64,6 +72,10 @@ class Equipo{
 	public function setCiudad($ciudad)
     {
         $this->ciudad = $ciudad;
+    }
+    public function getJugadores()
+    {
+        return $this->jugadores;
     }  	
 }
 

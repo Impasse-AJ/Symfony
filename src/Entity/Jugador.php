@@ -21,9 +21,9 @@ class Jugador
 	#[ORM\Column(type:'integer', name:'edad')]
 	private $edad;
 
-   #[ORM\Column(type:'integer', name:'equipo')]
-	private $equipo;
-	
+    #[ORM\ManyToOne(targetEntity: 'Equipo', inversedBy: 'jugadores')]
+    #[ORM\JoinColumn(name: 'Equipo', referencedColumnName: 'id')]
+    private $equipo;
 	public function getId()
     {
         return $this->id;
